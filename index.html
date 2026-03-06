@@ -193,13 +193,17 @@ onValue(resultsRef, snap => {
 function computeTable() {
   const t = {};
   players.forEach(p => { t[p] = { name:p, P:0, W:0, D:0, L:0, GF:0, GA:0, GD:0, Pts:0, form:[] }; });
-  Object.values(results).forEach(r => {
-    if (!t[r.home] || !t[r.away]) return;
-    const h = t[r.home], a = t[r.away];
-    h.P++; a.P++; h.GF += r.hg; h.GA += r.ag; a.GF += r.ag; a.GA += r.hg;
-    if      (r.hg > r.ag) { h.W++; h.Pts+=3; a.L++; h.form.push('W'); a.form.push('L'); }
-    else if (r.hg < r.ag) { a.W++; a.Pts+=3; h.L++; h.form.push('L'); a.form.push('W'); }
-    else                  { h.D++; h.Pts++;   a.D++; a.Pts++; h.form.push('D'); a.form.push('D'); }
+  const sorted = Object.values(results).sort((a,b) => (a.ts||0) - (b.ts||0));
+  sorted.forEach(r => {
+    const home = String(r.home||"").trim();
+    const away = String(r.away||"").trim();
+    if (!t[home] || !t[away]) return;
+    const h = t[home], a = t[away];
+    const hg = Number(r.hg), ag = Number(r.ag);
+    h.P++; a.P++; h.GF += hg; h.GA += ag; a.GF += ag; a.GA += hg;
+    if (hg > ag) { h.W++; h.Pts+=3; a.L++; h.form.push("W"); a.form.push("L"); }
+    else if (hg < ag) { a.W++; a.Pts+=3; h.L++; h.form.push("L"); a.form.push("W"); }
+    else { h.D++; h.Pts++; a.D++; a.Pts++; h.form.push("D"); a.form.push("D"); }
   });
   Object.values(t).forEach(x => x.GD = x.GF - x.GA);
   return Object.values(t).sort((a,b) => b.Pts-a.Pts || b.GD-a.GD || b.GF-a.GF || a.name.localeCompare(b.name));
