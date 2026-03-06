@@ -39,9 +39,9 @@ h1 {  font-size: clamp(48px, 10vw, 80px); font-weight: 900; letter-spacing: -0.0
 .stat-label { font-size: 10px; color: var(–muted); text-transform: uppercase; letter-spacing: 0.09em; margin-top: 3px; }
 
 .table-wrap { background: var(–surface); border: 1px solid var(–border); border-radius: 16px; overflow: hidden; margin-bottom: 28px; }
-.table-head { display: grid; grid-template-columns: 42px 1fr 36px 36px 36px 36px 44px 52px 52px; padding: 11px 14px; background: var(–surface2); border-bottom: 1px solid var(–border); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(–muted); }
+.table-head { display: grid; grid-template-columns: 38px 1fr 32px 32px 32px 32px 40px 50px 48px; padding: 11px 14px; background: var(–surface2); border-bottom: 1px solid var(–border); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(–muted); }
 .table-head span:not(:first-child):not(:nth-child(2)) { text-align: center; }
-.team-row { display: grid; grid-template-columns: 42px 1fr 36px 36px 36px 36px 44px 52px 52px; padding: 13px 14px; border-bottom: 1px solid rgba(255,255,255,0.035); align-items: center; transition: background 0.15s; animation: slideIn 0.35s ease both; }
+.team-row { display: grid; grid-template-columns: 38px 1fr 32px 32px 32px 32px 40px 50px 48px; padding: 13px 14px; border-bottom: 1px solid rgba(255,255,255,0.035); align-items: center; transition: background 0.15s; animation: slideIn 0.35s ease both; }
 @keyframes slideIn { from{opacity:0;transform:translateX(-10px)} to{opacity:1;transform:translateX(0)} }
 .team-row:last-child { border-bottom: none; }
 .team-row:hover { background: rgba(255,255,255,0.025); }
@@ -91,7 +91,7 @@ input[type=“number”]:focus { outline: none; border-color: var(–accent); }
 .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(–accent); color: #000; padding: 11px 22px; border-radius: 100px; font-weight: 700; font-size: 13px; z-index: 999; transition: transform 0.28s ease; white-space: nowrap; pointer-events: none; }
 .toast.show { transform: translateX(-50%) translateY(0); }
 @media (max-width: 580px) {
-.table-head, .team-row { grid-template-columns: 34px 1fr 28px 28px 28px 28px 36px 46px 44px; padding: 11px 9px; font-size: 11px; }
+.table-head, .team-row { grid-template-columns: 30px 1fr 26px 26px 26px 26px 34px 44px 42px; padding: 11px 9px; font-size: 11px; }
 .table-head { font-size: 9px; } .pts { font-size: 18px; } .name { font-size: 13px; }
 }
 </style>
@@ -227,7 +227,7 @@ function renderTable(table) {
       <div class="cell">${t.P}</div><div class="cell">${t.W}</div>
       <div class="cell">${t.D}</div><div class="cell">${t.L}</div>
       <div class="cell">${gd}</div>
-      <div class="form-cell">${form.map(f=>`<div class="fd ${f==='_'?'empty':f}"></div>`).join('')}</div>
+      <div class="form-cell">${form.map(f=>{const c=f==="W"?"#00e5a0":f==="D"?"#ffd166":f==="L"?"#ff4d6d":"#2a2a3a";return `<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${c};margin:0 1px;"></span>`;}).join("")}</div>
       <div class="pts">${t.Pts}</div>
     </div>`;
   }).join('');
