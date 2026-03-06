@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EAFC 26 League</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #080810; --surface: #0f0f1a; --surface2: #171726; --border: #252538;
@@ -26,7 +26,7 @@ header { text-align: center; margin-bottom: 36px; padding-top: 16px; }
 .live-badge { display: inline-flex; align-items: center; gap: 8px; background: var(–surface2); border: 1px solid var(–border); border-radius: 100px; padding: 5px 16px 5px 8px; margin-bottom: 18px; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(–accent); }
 .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(–accent); box-shadow: 0 0 6px var(–accent); animation: blink 1.8s infinite; }
 @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.7)} }
-h1 { font-family: ‘Bebas Neue’, cursive; font-size: clamp(52px, 11vw, 88px); letter-spacing: 0.02em; line-height: 0.88; background: linear-gradient(140deg, #ffffff 30%, var(–accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+h1 {  font-size: clamp(48px, 10vw, 80px); font-weight: 900; letter-spacing: -0.03em; line-height: 0.9; background: linear-gradient(140deg, #ffffff 30%, var(–accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .subtitle { margin-top: 10px; color: var(–muted); font-size: 13px; letter-spacing: 0.06em; }
 .sync-row { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 8px; font-size: 12px; color: var(–muted); }
 .sync-dot { width: 6px; height: 6px; border-radius: 50%; background: var(–muted); transition: background 0.3s; }
@@ -35,7 +35,7 @@ h1 { font-family: ‘Bebas Neue’, cursive; font-size: clamp(52px, 11vw, 88px);
 
 .stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 28px; }
 .stat-card { background: var(–surface); border: 1px solid var(–border); border-radius: 12px; padding: 14px; text-align: center; }
-.stat-value { font-family: ‘Bebas Neue’, cursive; font-size: 30px; color: var(–accent); line-height: 1; }
+.stat-value {  font-size: 28px; font-weight: 800; color: var(–accent); line-height: 1; }
 .stat-label { font-size: 10px; color: var(–muted); text-transform: uppercase; letter-spacing: 0.09em; margin-top: 3px; }
 
 .table-wrap { background: var(–surface); border: 1px solid var(–border); border-radius: 16px; overflow: hidden; margin-bottom: 28px; }
@@ -48,17 +48,17 @@ h1 { font-family: ‘Bebas Neue’, cursive; font-size: clamp(52px, 11vw, 88px);
 .team-row[data-pos=“1”] { border-left: 3px solid var(–gold); }
 .team-row[data-pos=“2”] { border-left: 3px solid var(–silver); }
 .team-row[data-pos=“3”] { border-left: 3px solid var(–bronze); }
-.pos { font-family: ‘Bebas Neue’, cursive; font-size: 20px; color: var(–muted); }
+.pos {  font-size: 16px; font-weight: 700; color: var(–muted); }
 .pos.gold { color: var(–gold); } .pos.silver { color: var(–silver); } .pos.bronze { color: var(–bronze); }
 .name { font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .cell { text-align: center; font-size: 13px; color: var(–muted); font-weight: 500; }
-.pts { text-align: center; font-family: ‘Bebas Neue’, cursive; font-size: 22px; }
+.pts { text-align: center;  font-size: 20px; font-weight: 800; }
 .form-cell { display: flex; gap: 3px; justify-content: center; align-items: center; }
 .fd { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 .fd.W { background: var(–green); } .fd.D { background: var(–yellow); } .fd.L { background: var(–red); } .fd._ { background: var(–border); }
 
 .panel { background: var(–surface); border: 1px solid var(–border); border-radius: 16px; padding: 22px; margin-bottom: 22px; }
-.panel-title { font-family: ‘Bebas Neue’, cursive; font-size: 20px; letter-spacing: 0.05em; color: var(–accent); margin-bottom: 16px; }
+.panel-title {  font-size: 18px; font-weight: 800; letter-spacing: 0; color: var(–accent); margin-bottom: 16px; }
 .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 12px; min-height: 10px; }
 .chip { display: flex; align-items: center; gap: 5px; background: var(–surface2); border: 1px solid var(–border); border-radius: 100px; padding: 5px 10px; font-size: 12px; font-weight: 500; }
 .chip-x { background: none; border: none; color: var(–muted); cursor: pointer; font-size: 15px; line-height: 1; padding: 0; transition: color 0.15s; }
@@ -72,11 +72,11 @@ input[type=“text”]:focus { outline: none; border-color: var(–accent); }
 select { width: 100%; background: var(–surface2); border: 1px solid var(–border); color: var(–text); border-radius: 9px; padding: 11px 12px; font-family: ‘DM Sans’, sans-serif; font-size: 13px; font-weight: 500; appearance: none; cursor: pointer; transition: border-color 0.2s; }
 select:focus { outline: none; border-color: var(–accent); }
 .vs-block { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-.vs-label { font-family: ‘Bebas Neue’, cursive; font-size: 26px; color: var(–muted); }
+.vs-label {  font-size: 20px; font-weight: 800; color: var(–muted); }
 .score-row { display: flex; align-items: center; gap: 5px; }
 input[type=“number”] { width: 52px; background: var(–surface2); border: 1px solid var(–border); color: var(–text); border-radius: 9px; padding: 9px 6px; font-family: ‘DM Sans’, sans-serif; font-size: 20px; font-weight: 700; text-align: center; transition: border-color 0.2s; }
 input[type=“number”]:focus { outline: none; border-color: var(–accent); }
-.score-sep { font-family: ‘Bebas Neue’, cursive; font-size: 22px; color: var(–muted); }
+.score-sep {  font-size: 22px; color: var(–muted); }
 .btn-primary { width: 100%; margin-top: 14px; padding: 13px; background: var(–accent); color: #000; border: none; border-radius: 9px; font-family: ‘DM Sans’, sans-serif; font-weight: 700; font-size: 14px; cursor: pointer; letter-spacing: 0.02em; transition: opacity 0.2s, transform 0.1s; }
 .btn-primary:hover { opacity: 0.88; } .btn-primary:active { transform: scale(0.98); }
 .result-item { display: flex; align-items: center; gap: 8px; padding: 9px 11px; background: var(–surface2); border-radius: 9px; margin-bottom: 7px; animation: slideIn 0.25s ease; }
@@ -84,7 +84,7 @@ input[type=“number”]:focus { outline: none; border-color: var(–accent); }
 .ri-teams { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; }
 .ri-team { font-weight: 600; font-size: 13px; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ri-team.home { text-align: right; }
-.ri-score { font-family: ‘Bebas Neue’, cursive; font-size: 18px; color: var(–accent); flex-shrink: 0; min-width: 44px; text-align: center; }
+.ri-score {  font-size: 16px; font-weight: 800; color: var(–accent); flex-shrink: 0; min-width: 44px; text-align: center; }
 .ri-del { background: none; border: none; color: var(–muted); cursor: pointer; font-size: 15px; padding: 3px; transition: color 0.15s; flex-shrink: 0; }
 .ri-del:hover { color: var(–red); }
 .empty { text-align: center; color: var(–muted); font-size: 13px; padding: 18px; }
